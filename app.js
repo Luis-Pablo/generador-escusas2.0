@@ -1,4 +1,11 @@
-const prepararEscusa = function() {
+
+let parrafo = document.querySelector('.escusa-generada .parrafo'); 
+const b = document.querySelector('button');
+
+
+b.addEventListener('click', () => {
+
+  const prepararEscusa = function() {
     //write your code here
       let who = ["Mi perro", "Mi abuela", "Su tortuga", "Mi pajaro"];
       let what = ["comidó", "pisadó", "aplastadó", "rotó"];
@@ -7,24 +14,10 @@ const prepararEscusa = function() {
       let aleatorio = `${who[Math.floor(Math.random()* who.length)]} ha ${what[Math.floor(Math.random()* what.length)]} mi tarea ${when[Math.floor(Math.random()* when.length)]}`
       return aleatorio
   };
-  
   prepararEscusa();
   
-  
-  
-  
-  const b = document.querySelector('button');
-  
-  
-  const borrar = ( () => {
-    let parrafo = document.querySelector('.escusa-generada .parrafo');
-    parrafo == "" ? parrafo.remove() : null
-  
-  });
-  borrar();
-  
+
   const generarParrafo = ( () =>  {
-    
     let div = document.querySelector('.escusa-generada');
     div.classList.add('container');
     div.classList.add('my-4');
@@ -35,17 +28,26 @@ const prepararEscusa = function() {
     div.appendChild(p);
   });
   generarParrafo();
+
+
+
+
+  if (parrafo) {
+    const clickBoton = ( () => {
+            
+      generarParrafo.remove();
+      
+      return generarParrafo;
+    });
+    clickBoton();
   
-  const revisar = ( () => {
-    generarParrafo ? borrar : null
-  });
-  revisar();
+  }else {
+    const inicio = ( ()  => {
   
-  const clickBoton = ( (e)  => {
-    generarParrafo ? revisar : generarParrafo()
-    
-  });
-  clickBoton();
+     return generarParrafo;
+    });
+    inicio();
+}
   
-  b.addEventListener('click', clickBoton);
-  console.log(clickBoton());
+  
+});
