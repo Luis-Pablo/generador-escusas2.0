@@ -34,7 +34,7 @@ b.addEventListener('click', () => {
 
     let nuevoParrafo = generarParrafo(prepararEscusa());
     let nuevoDiv = nuevoParrafo.parentNode;
-    nuevoDiv.replaceChild(parrafo, nuevoParrafo);
+    nuevoDiv.replaceChild(p, nuevoParrafo);
     
   
   }else {
